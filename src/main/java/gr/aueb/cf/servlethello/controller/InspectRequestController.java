@@ -63,11 +63,13 @@ public class InspectRequestController extends HttpServlet {
 
         /*Inspect Session Attribute*/
         //scope of setting attribute:
-        //pageQ the global scope
+        //page:
         //request: may related with a collection of pages
-        //session
+        //session: the global scope
+
+        //set/write in session object the credentials
         request.getSession().setAttribute("username", username);
-        //In every page of session I can get the username attr
+        //In every page of session I can get/retrieve the username attr
         String sessionUsername = (String) request.getSession().getAttribute("username");
         System.out.println("Username: " + username);
         response.getWriter().write("Username: " + username + "\n");
